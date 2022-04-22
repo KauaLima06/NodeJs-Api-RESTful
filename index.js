@@ -4,10 +4,12 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const apiRouters = require('./routers/apiRouters.js');
 
 const app = express();
 //Config JSON
+app.use(cors());
 app.use(express.json());
 app.use('/user', apiRouters);
 
